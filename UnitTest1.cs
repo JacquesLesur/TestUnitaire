@@ -159,7 +159,6 @@ namespace TUFS
         [TestMethod]
         public void RenameToNomExistant()
         {
-            
             File FileChangerNom = currentDir.Cd("dir1");
             Assert.IsFalse(FileChangerNom.RenameTo("dir2"));
         }
@@ -168,8 +167,8 @@ namespace TUFS
         [TestMethod]
         public void IsDirectory()
         {
-
             Assert.IsTrue(currentDir.IsDirectory());
+
         }
         [TestMethod]
         public void IsFile()
@@ -177,6 +176,7 @@ namespace TUFS
 
             Assert.IsFalse(currentDir.IsFile());
         }
+
         [TestMethod]
         public void GetParent()
         {
@@ -184,6 +184,7 @@ namespace TUFS
             Directory parent = Fils.GetParent();
             Assert.AreEqual(parent.GetName(), "[/]");
         }
+
         [TestMethod]
         public void GetPath()
         {
@@ -211,7 +212,6 @@ namespace TUFS
         public void Chmod()
         {
             currentDir.Chmod(0);
-            
             Assert.IsFalse(currentDir.CanExecute());
             Assert.IsFalse(currentDir.CanWrite());
             Assert.IsFalse(currentDir.CanRead());
